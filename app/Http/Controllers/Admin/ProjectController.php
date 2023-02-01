@@ -86,9 +86,10 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
-        return view('admin.projects.edit', compact('project', 'types'));
+        $technologies = Technology::all();
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
 
-        // $technologies = isset($dat['technologies']) ? $data['technologies'] : [];
+        // $technologies = isset($data['technologies']) ? $data['technologies'] : [];
         // $project->technologies()->sync($technologies);
     }
 
@@ -104,10 +105,14 @@ class ProjectController extends Controller
         $data = $request->validated();
 
         $old_title = $project->title;
-        $old_description = $project->description;
+        // $old_description = $project->description;
         $project->slug = Str::slug($data['title']);
 
-        if(isset($data['cover_image'])) {
+        if ( isset($data['cover_image']) ) {
+            if( $project->cover_image ) {
+                Storage::delete($project->cover_image);
+            }
+            // $data['cover_image'] = Storage::put('uploads', $data['cover_image']);
             $data['cover_image'] = Storage::disk('public')->put('uploads', $data['cover_image']);
         }
 

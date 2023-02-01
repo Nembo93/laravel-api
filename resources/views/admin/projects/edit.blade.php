@@ -20,10 +20,15 @@
               <label for="customer" class="form-label">{{old('customer')}}</label>
               <input type="text" class="form-control" id="customer" name="customer" placeholder="Inserisci il nome del Cliente" value="{{ old('customer', $project->customer) }}">
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
               <label for="cover_image" class="form-label">Immagine</label>
               <input type="file" class="form-control" id="cover_image" name="cover_image" value="{{old('cover_image')}}">
-          </div>
+            </div> --}}
+
+            <div class="mb-3">
+              <label for="cover_image" class="form-label">Immagine</label>
+              <input type="file" class="form-control" id="cover_image" name="cover_image" value="{{ old('cover_image') }}" onchange="loadFile(event)">
+            </div>
 
           <div class="mb-3">
             <label for="type_id" class="form-label">Categoria progetto</label>
