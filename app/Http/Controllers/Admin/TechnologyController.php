@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Technologies;
-use App\Http\Requests\StoreTechnologiesRequest;
-use App\Http\Requests\UpdateTechnologiesRequest;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class TechnologiesController extends Controller
+class TechnologyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +30,10 @@ class TechnologiesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTechnologiesRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTechnologiesRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,10 +41,10 @@ class TechnologiesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Technologies  $technologies
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Technologies $technologies)
+    public function show($id)
     {
         //
     }
@@ -53,10 +52,10 @@ class TechnologiesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Technologies  $technologies
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Technologies $technologies)
+    public function edit($id)
     {
         //
     }
@@ -64,11 +63,11 @@ class TechnologiesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateTechnologiesRequest  $request
-     * @param  \App\Models\Technologies  $technologies
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTechnologiesRequest $request, Technologies $technologies)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +75,10 @@ class TechnologiesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Technologies  $technologies
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Technologies $technologies)
+    public function destroy($id)
     {
         //
     }
