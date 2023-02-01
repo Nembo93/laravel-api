@@ -21,6 +21,13 @@
         <h4>Descrizione: </h4>{{$project->description}}
     </div>
     <div class="mt-4">
+      @if($project->type)
+        Tipo di progetto: {{$project->type->name}}
+      @else 
+        Nessuna tipologia
+      @endif
+    </div>
+    <div class="mt-4">
       <h5>Tecnologie: </h4>
         @foreach($project->technologies as $technology)
           <div>{{$technology->name}}</div>
