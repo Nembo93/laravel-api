@@ -131,9 +131,9 @@ class ProjectController extends Controller
     {
         $old_title = $project->title;
 
-        // if( $project->cover_image ) {
-        //     Storage::disk('public')->delete($project->cover_image);
-        // }
+        if( $project->cover_image ) {
+            Storage::disk('public')->delete($project->cover_image);
+        }
         
         $project->delete();
 
