@@ -84,7 +84,7 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Project $project)
-    {
+    {   
         $types = Type::all();
         $technologies = Technology::all();
         return view('admin.projects.edit', compact('project', 'types', 'technologies'));
@@ -101,10 +101,9 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateProjectRequest $request, Project $project)
-    {
-        $data = $request->validated();
-
+    {   
         $old_title = $project->title;
+        $data = $request->validated();
         // $old_description = $project->description;
         $project->slug = Str::slug($data['title']);
 
