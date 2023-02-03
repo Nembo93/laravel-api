@@ -1,14 +1,16 @@
-@extends('layout.admin')
+@extends('layouts.admin')
 
-@section('page_content')
+@section('content')
     <div class="container">
         <div class="mb-3">
             <h1>Tipologie di progetto:</h1>
         </div>
-        @foreach ($types as $type)
-            <div>
-                <a class="btn btn-primary">{{$type}}</a>
-            </div>
-        @endforeach
+        <ul>
+            @foreach ($types as $type)
+            <li class="mb-1">
+                <a href="{{ route('admin.types.show', $type) }}" class="btn btn-primary">{{$type->name}}</a>
+            </li>
+             @endforeach
+        </ul>   
     </div>
 @endsection

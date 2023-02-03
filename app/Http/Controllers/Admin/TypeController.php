@@ -49,7 +49,9 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        //
+        // $types = Type::all();
+        // dd($type->name);
+        return view('admin.types.show', compact('type'));
     }
 
     /**
