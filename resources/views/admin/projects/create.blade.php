@@ -14,7 +14,7 @@
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Descrizione del progetto</label>
-                <textarea class="form-control" id="content" name="description" rows="10" placeholder="Inserisci la descrizione del progetto">{{ old('description') }}</textarea>
+                <textarea class="form-control" id="description" name="description" rows="10" placeholder="Inserisci la descrizione del progetto">{{ old('description') }}</textarea>
             </div>
             <div class="mb-3">
                 <label for="customer" class="form-label">Nome Cliente</label>
